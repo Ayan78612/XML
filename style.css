@@ -1,0 +1,114 @@
+
+	.content {
+    max-width: 800px;
+    margin: auto;
+  }
+		table {
+			border-collapse: separate;
+            border: 2px;
+			width: 100%;
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 10px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #ffffff
+		}
+
+		tr:nth-child(odd){
+			background-color: #ffffff;
+		}
+
+		th {
+			background-color: #7c0f65;
+			color: rgb(255, 255, 255);
+		}
+		
+
+/* CSS */
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+
+.box {
+    width: 100%;
+    height: 500px;
+
+  }
+
+.Div {
+    background-color: rgb(86, 86, 86);   
+    width:auto; 
+    text-align: left;
+    color : rgb(0, 0, 0);
+  }
+
+.myDiv {
+    border: 3px outset rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);   
+    width:400px; 
+    text-align: left;
+    color : rgb(0, 0, 0);
+  }
+
+  .box {
+    width: 100%;
+    height: 500px;
+
+  }
+
+  
+.myDiv1{
+    border: 3px outset rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);   
+    width:500px; 
+    height:60px;
+    text-align: left;
+    color : rgb(0, 0, 0);
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .myDiv2{
+    border: 3px outset rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);   
+    width:cover; 
+    height:180px;
+    text-align: left;
+    color : rgb(0, 0, 0);
+  }
+  

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+	<title>Reads the XML data using JavaScript</title>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+	<meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>GFG : Scroll Indicator</title>
+	</head>
+
+	
+
+	<!--JavaScript-->
+	<script>
+		function loadXMLDoc() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function () {
+
+				// Request finished and response
+				// is ready and Status is "OK"
+				if (this.readyState == 4 && this.status == 200) {
+					empDetails(this);
+				}
+			};
+
+			// employee.xml is the external xml file
+			xmlhttp.open("GET", "student.xml", true);
+			xmlhttp.send();
+		}
+
+		function empDetails(xml) {
+			var i;
+			var xmlDoc = xml.responseXML;
+			var table =
+				`<tr><th>Firstname</th><th>Lastname</th>
+					<th>Roll_No</th>
+				</tr>`;
+			var x = xmlDoc.getElementsByTagName("student");
+
+			// Start to fetch the data by using TagName
+			for (i = 0; i < x.length; i++) {
+				table += "<tr><td>" +
+					x[i].getElementsByTagName("firstname")[0]
+					.childNodes[0].nodeValue + "</td><td>" +
+					x[i].getElementsByTagName("lastname")[0]
+					.childNodes[0].nodeValue + "</td><td>" +
+					x[i].getElementsByTagName("Roll_No")[0]
+					.childNodes[0].nodeValue 
+					;
+			}
+
+			// Print the xml data in table form
+			document.getElementById("id").innerHTML = table;
+		}
+	</script>
+</head>
+
+<body style= "background-color:rgb(255, 255, 255)" >
+	<img src = "XML.png">
+<div class="content">
+
+	<h1 style = "color:rgb(255, 255, 255); padding:10px; background-color:rgb(0, 0, 0);"  > Topic : XML ELEMENTS </h1>
+	
+
+	<ul style = "color:rgb(0, 0, 0); font-family: 'Trebuchet MS'; font-size: large; padding: 20PX ; background-color: bisque;">
+		<li>XML Stand for eXtesible Markup Language</li>
+		<li>XML is a markup language much like HTML</li>
+		<li>XML was designed to store and transport data</li>
+		<li>XML was designed to be self-descriptive</li></ul><hr>
+
+		<h1 style = "color:black; padding:10px; background-color:white; "  > Difference Between XML and HTML </h1>
+		<table class = "Div">
+			<tr>
+				<th> XML </th>
+				<th> HTML </th>
+				</tr>
+				<tr>
+					<td> XML is designed to carry data emphasizing on what type of data it is.</td>
+					<td> HTML is designed to display data emphasizing on how data looks</td> </tr>
+					<tr>
+						<td> XML tags are not predefined</td>
+						<td> HTML tags are predefined </td>
+						</tr>
+						<tr>
+							<td>HTML is about displaying data,hence it is static</td>
+							<td>XML is about carrying information,which makes it dynamic.</td>
+						</tr>
+				</table> <br><hr>
+
+			
+
+
+
+				<h1 style = "color:rgb(0, 0, 0);"  > Syntax of XML </h1>
+				<pre class = "myDiv"> <code> <xmp>  Syntax rules for XML declaration or XML Prolog:
+	<xml version="1.0" encoding="UTF-8"?>
+	<root>
+	<child>
+	<subchild>.....</subchild>
+	</child>
+	</root>"</xmp> </code> </pre><>
+
+	<h1 style = "color:rgb(0, 0, 0);"  > XML ELEMENTS </h1>
+				<ul style = "color:rgb(0, 0, 0); font-family: 'Trebuchet MS'; font-size: large;">
+					<li>The XML elements are the basic building block of the XML document.</li>
+					<li>It is used as a container to store text elements, attributes, media objects etc.</li>
+					<li>Every XML documents contain at least one element whose scopes are
+						delimited by start and end tags or <br> in case of empty elements it is
+						delimited by an empty tag.</li>
+					</ul><hr>
+					<h1 style = "color:rgb(0, 0, 0);"  > Syntax  </h1>
+				<pre class = "myDiv1"> <code> <xmp> <element-name attributes> Contents...</element-name></xmp> </code> </pre>
+
+				<h1 style = "color:rgb(0, 0, 0);"  > Rule to define XML elements </h1>
+				<ul style = "color:rgb(0, 0, 0); font-family: 'Trebuchet MS'; font-size: large;">
+					<li>An element can contain alphanumeric values or characters.
+						But only three special characters are required in the names these are hyphen,
+						underscore and period.</li>
+					<li>Names are case sensitive. For example address, Address, aDDress are
+						different names.</li>
+					<li>Both start and end tags for elements need to be same.</li>
+				    </ul><hr>
+      
+					<h1 style = "color:rgb(0, 0, 0);"  > Example </h1>
+					<pre><xmp>
+	<?xml version = “1.0”?>
+	<contactinfo>
+	<address category = “college”>
+	<name> Ayan </name>
+	<College> ICLES MJ </College>
+	<mobile>2345456767</mobile>
+	</address>
+	</contactinfo> </xmp> </pre>
+
+	<h4 style="color: black"> Output </h4>
+	Ayan <br>
+	ICLES MJ <br>
+	2345456767 <br> <br> <hr>
+	<h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(0, 0, 0); text-align:center"> 
+		Contents on this site is taken from GEEKSFORGEEKS <a href = https://www.geeksforgeeks.org/xml-elements/?ref=lbp>Click Here </a></h3>
+
+	<div class = "myDiv2">
+	<h5 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(255, 255, 255); text-align:center"> 
+		DEMO OF THE XML FILE HOW ITS WORK, WHEN YOU CLICK ON 
+	THE BUTTON IT <BR>FETCH THE DATA THAT IS STORED IN THE XML FILE </h5>
+	<center>
+	
+		<button type="button" class="button-87"
+			onclick="loadXMLDoc()">
+			Get Students Details
+		</button>
+	
+		<a href="student.xml"download>Click Here to download the XML Source File</a> <br>
+		<a href="script.js" download>Click Here to download the JavaScript Souce file </a> <br><br>
+		
+	</center> </div>	
+	<br><br>
+	<table id="id" ></table></div>
+	
+</body>
+
+
+</html>
